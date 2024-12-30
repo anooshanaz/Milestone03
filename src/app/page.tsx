@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import Cardsoul from "./components/Cardsoul";
 import Productlist from "./components/Productlist";
 import Testimonals from "./components/Testimonals";
+import Menu from "./components/Menuitems";
+import Menuitems from "./components/Menuitems";
 
 export default function Home() {
   return (
@@ -18,6 +20,7 @@ export default function Home() {
       <Cardsoul/>
       <Banner/>
       <Productlist/>
+      <Menuitems/>
       <Prograssive/>
       <SpecialOffers/>
       <Card/>

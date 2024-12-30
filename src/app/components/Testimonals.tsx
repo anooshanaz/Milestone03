@@ -35,7 +35,7 @@ const Testimonals = () => {
     {
       id: 7,
       title: "Biryani 7",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSgGhSzSdXF_Jnb9Ut1tmaqnneSCOqHZOIlA&s", 
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLvDJ12Nnp160nBi1zQ3UGOCK3wQiCWm9YMA&s", 
     },
     {
       id: 8,
