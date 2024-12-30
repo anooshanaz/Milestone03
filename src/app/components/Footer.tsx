@@ -1,7 +1,6 @@
 import React from 'react'
 import { FaFacebookF, FaYoutube, FaTwitterSquare, FaInstagram } from "react-icons/fa";
 import { AiFillTikTok } from "react-icons/ai";
-import { MdEmail } from "react-icons/md";
 import Link from 'next/link';
 
 const Footer = () => {
