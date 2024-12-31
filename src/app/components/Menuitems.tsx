@@ -1,9 +1,9 @@
- 'use client'
+'use client'
 
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import ProductCard from "./Productcard"
-import { Product } from "@/pages/type";
+import { Product } from "@/pages/type"
 
 const Menuitems = () => {
     const [products, setProducts] = useState<Product[]>([])
@@ -45,7 +45,6 @@ const Menuitems = () => {
     // Proceed to checkout
     const goToCheckout = () => {
         setIsCheckout(true)
-        router.push("/checkout")  // Assuming the checkout page is at /checkout
     }
 
     // Clear cart
@@ -131,6 +130,42 @@ const Menuitems = () => {
                         </div>
                     )}
                 </div>
+
+                {/* Checkout Section */}
+                {isCheckout && (
+                    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center z-50 text-black min-h-screen">
+                        <div className="bg-white p-8 rounded-lg w-full h-auto sm:w-96">
+                            <h2 className="text-4xl font-bold text-blue-600 mb-4">CheckOut</h2>
+                            <p className="text-lg text-red-600">Please confirm your order before proceeding!</p>
+                            <div className="mt-4">
+                                <ul>
+                                    {cart.map((product, index) => (
+                                    <li key={index} className="flex justify-between mb-4">
+                                        <span>{product.name}</span>
+                                        <span>${product.price}</span>
+                                    </li>
+                                    ))}
+                                </ul>
+                                <div className="flex justify-between mt-4">
+                                    <span className="font-semibold">Total:</span>
+                                    <span className="font-bold">${cart.reduce((total, product) => total + product.price, 0)}</span>
+                                </div>
+                            </div>
+                            <div className="mt-6 flex justify-between">
+                                <button
+                                    onClick={() => setIsCheckout(false)}
+                                    className="bg-red-600 py-3 px-6 rounded-lg text-lg shadow-md hover:bg-red-700 transition duration-300 ease-in-out transform hover:scale-110 text-white ml-4">
+                                    Close
+                                </button>
+                                <button
+                                    onClick={() => alert("Order Confirm ... Will Deliver At Your Door Step!")}
+                                    className="bg-green-600 text-white py-2 px-6 rounded-lg text-lg hover:bg-green-700 transition duration-300 ease-in-out transform hover:scale-110">
+                                    Confirm Order
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     )
